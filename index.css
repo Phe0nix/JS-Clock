@@ -1,0 +1,58 @@
+body{
+  background: skyblue;
+}
+.clock{
+  border: 15px solid white;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  position: absolute; top: 50%; left: 50%;
+  transition: 0.2s linear;
+  transform: translate(-50%, -50%);
+}
+.clock-face{
+  width: 180px; height: 180px;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hand{
+  width: 50%;
+  height: 6px;
+  background:black;
+  position: absolute;
+  top: 50%;
+  border-radius: 6px;
+  transform-origin: 100%;
+  transform: rotate(90deg);
+  transition: all 0.1s;
+  transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+.dot{
+  content: '';
+  background: black;
+  width: 18px;
+  height: 18px;
+  z-index: 3;
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.min-hand{
+  background: red;
+  width: 45%;
+  z-index: 1;
+  left: 5%;
+}
+.second-hand{
+  z-index: 2;
+  background: blue;
+  height: 2px;
+}
+
+@media screen and (max-width: 280px){
+  .clock{
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: 0.2s linear;
+  }
+}
